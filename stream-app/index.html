@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#182b29" />
+    <title>Sigil · Timeline</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <span class="mark">✳</span>
+      <div>
+        <h1>Sigil</h1>
+        <p>Your signals, together.</p>
+      </div>
+    </header>
+    <main>
+      <nav aria-label="Timeline controls">
+        <label
+          >Search<input
+            id="search"
+            type="search"
+            placeholder="Find a signal…" /></label
+        ><label
+          >Type<select id="type">
+            <option value="">All types</option>
+          </select></label
+        ><label class="file"
+          >Open JSONL<input
+            id="file"
+            type="file"
+            accept=".jsonl,.json,application/json" /></label
+        ><button id="refresh">Refresh hub</button>
+      </nav>
+      <p id="status" role="status">Loading your timeline…</p>
+      <section id="feed" aria-label="Timeline"></section>
+    </main>
+    <template id="card"
+      ><article>
+        <div class="meta"><span class="kind"></span><time></time></div>
+        <h2></h2>
+        <div class="content"></div>
+        <details>
+          <summary>Entity fields</summary>
+          <pre></pre>
+        </details></article
+    ></template>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

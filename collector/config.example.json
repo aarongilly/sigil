@@ -1,0 +1,7 @@
+{
+  "output": "../data",
+  "sources": [
+    {"name": "vault", "adapter": "obsidian", "path": "examples/vault", "include_body": true},
+    {"name": "journal", "adapter": "csv", "path": "examples/journal.csv", "id_column": "id", "id_prefix": "journal-", "type": "journal", "fields": {"_name": "title", "_created": "date", "_body": "entry", "mood": "mood"}}
+  ]
+}

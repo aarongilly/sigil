@@ -2,6 +2,13 @@ This is a Repo for development on my Simple Interchange Grammar for Identity and
 
 It's an idea. We'll see if anything interesting comes of it.
 
+## Projects in this repository
+
+- **[Collection hub](collector/README.md)** — read-only Obsidian and CSV spokes, atomic JSONL snapshots, and a nightly scheduling template.
+- **[Timeline PWA](stream-app/README.md)** — a chronological feed with type-specific cards, search, and local JSONL import.
+
+The source applications remain authoritative. The hub is a replaceable read model; the PWA consumes its snapshots. Optional analysis and explicitly scoped write capabilities can evolve separately. The SIGIL concept and specification follow below.
+
 ---
 
 > [!tldr] A homegrown system for organizing information
@@ -13,8 +20,8 @@ It's an idea. We'll see if anything interesting comes of it.
 SIGIL gives things persistent identity and a small vocabulary for describing their data and relationships. It requires no universal database, ontology, or application.
 
 SIGIL [on an index card](<Index Card Sized Notetaking>):
-!Pasted image 20260829152013.png
-
+![tldr](assets/image.png)
+ 
 ## 1. Entities and identity
 
 Anything worth identifying may be an entity: a note, record, file, person, project, event, physical object, or concept. Every entity MUST have exactly one permanent `_id`; it is the only required field.
@@ -116,7 +123,7 @@ A profile maps an environment such as Markdown, Obsidian, CSV, or an archive to 
 
 For example, a Markdown profile could map document text to a profile-defined `_body` field; `_body` is not required or defined by the core. A JPEG or physical object might use a separate entity record and `_path` to locate the resource. Paths may be relative to a portable root.
 
-!Pasted image 20260923215326.png
+![equivalency](assets/equivalency.png)
 
 Changing formatting, field order, serialization, or storage location does not create a new entity state. `_updated` SHOULD change only when authoritative logical content changes.
 
